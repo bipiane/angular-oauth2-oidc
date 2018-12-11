@@ -1,11 +1,11 @@
 {
-  "name": "angular-oauth2-oidc-codeflow",
+  "name": "angular-oauth2-oidc-codeflow-pkce",
   "license": "MIT",
   "author": {
-    "name": "Peer Bech Hansen"
+    "name": "Ivan Pianetti"
   },
   "version": "4.0.1",
-  "repository": "bechhansen/angular-oauth2-oidc",
+  "repository": "bipiane/angular-oauth2-oidc",
   "dependencies": {
     "jsrsasign": "^8.0.12"
   },

@@ -1,10 +1,10 @@
-# angular-oauth2-oidc-codeflow
+# angular-oauth2-oidc-codeflow-pkce
 [![Build Status](https://travis-ci.org/bechhansen/angular-oauth2-oidc.svg?branch=master)](https://travis-ci.org/bechhansen/angular-oauth2-oidc)
 
 
-angular-oauth2-oidc-codeflow is an OAuth2 and OpenId Connect (OIDC) client for Angular.
+angular-oauth2-oidc-codeflow-pkce is an OAuth2 and OpenId Connect (OIDC) client for Angular.
 The library is a Github fork of [manfredsteyer/angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc).
-The code of this library is found at [bechhansen/angular-oauth2-oidc](https://github.com/bechhansen/angular-oauth2-oidc).
+The code of this library is found at [bipiane/angular-oauth2-oidc](https://github.com/bipiane/angular-oauth2-oidc).
 
 The fork extends the existing library so it do also support:
 - [Authorization Code Grant flow](https://tools.ietf.org/html/rfc6749#page-24)
@@ -13,13 +13,13 @@ The fork extends the existing library so it do also support:
 ## Installing
 
 ```
-npm i angular-oauth2-oidc-codeflow --save
+npm i angular-oauth2-oidc-codeflow-pkce --save
 ```
 
 ## Importing the NgModule
 
 ```TypeScript
-import { OAuthModule } from 'angular-oauth2-oidc-codeflow';
+import { OAuthModule } from 'angular-oauth2-oidc-codeflow-pkce';
 [...]
 
 @NgModule({
@@ -48,7 +48,7 @@ To configure the library the following sample uses the new configuration API int
 Hence, The original API is still supported.
 
 ```TypeScript
-import { AuthConfig } from 'angular-oauth2-oidc-codeflow';
+import { AuthConfig } from 'angular-oauth2-oidc-codeflow-pkce';
 
 export const authConfig: AuthConfig = {
 
