@@ -692,6 +692,11 @@ export class OAuthService extends AuthConfig {
       .set('grant_type', 'refresh_token')
       .set('refresh_token', this._storage.getItem('refresh_token'))
       .set('scope', this.scope);
+
+    const savedNonce = this._storage.getItem('nonce');
+    if (savedNonce && this.oidc) {
+      params = params.set('nonce', savedNonce);
+    }
     if (this.dummyClientSecret) {
       params = params.set('client_secret', this.dummyClientSecret);
     }
