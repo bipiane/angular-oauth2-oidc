@@ -549,19 +549,24 @@ export class OAuthService extends AuthConfig {
     if (!this.hasValidAccessToken()) {
       throw new Error('Can not load User Profile without access_token');
     }
-    if (!this.validateUrlForHttps(this.userinfoEndpoint)) {
+    const userinfoEndpoint = this.customUserinfoEndpoint ? this.customUserinfoEndpoint : this.userinfoEndpoint;
+
+    if (!this.validateUrlForHttps(userinfoEndpoint)) {
       throw new Error(
         'userinfoEndpoint must use Http. Also check property requireHttps.'
       );
     }
 
+    const customBearer = this.customUserinfoEndpoint ?
+      ('Bearer ' + this.getIdToken()) : ('Bearer ' + this.getAccessToken());
+
     return new Promise((resolve, reject) => {
       const headers = new HttpHeaders().set(
         'Authorization',
-        'Bearer ' + this.getAccessToken()
+        customBearer
       );
 
-      this.http.get<UserInfo>(this.userinfoEndpoint, { headers }).subscribe(
+      this.http.get<UserInfo>(userinfoEndpoint, { headers }).subscribe(
         info => {
           this.debug('userinfo received', info);
 

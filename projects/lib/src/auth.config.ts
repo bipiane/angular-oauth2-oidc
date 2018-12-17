@@ -65,6 +65,11 @@ export class AuthConfig {
   public tokenEndpoint?: string = null;
 
   /**
+   * Url of the custom userinfo endpoint
+   */
+  public customUserinfoEndpoint?: string = null;
+
+  /**
    * Url of the userinfo endpoint as defined by OpenId Connect.
    *
    */
